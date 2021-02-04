@@ -1,0 +1,221 @@
+// sass --watch scss/style.scss:css/style.min.css --style compressed
+$yellow: #FFE900;
+
+html, body{
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: env(safe-area-inset);
+    background-image: url("../img/background.jpg");
+    /* Full height */
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+
+nav{
+    color: #FFFFFF;
+    height: 100px;
+
+    .logo{
+        display: block;
+        padding-left: -15px;
+        padding-top: 20px;
+        max-height: 90px;
+        cursor: pointer;
+    }
+    ul{
+        text-align: center;
+        float: right;
+    }
+    li{
+        list-style: none;
+        display: inline-block;
+        margin: 20px;
+        margin-top: 30px;
+        font-size: 24px;
+        // text-decoration: underline;
+        // text-underline-offset: 7px;
+    }
+    a{
+        text-decoration: none;
+        color: #FFFFFF;
+        
+    }
+    a:hover{
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+
+    a.left{
+        position: relative;
+    }
+
+    a.left:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #FFFFFF;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    a.left:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
+
+    .active{
+        color: $yellow;
+    }
+    .active:hover{
+        color: $yellow;
+    }
+    a.active:before{
+        background-color: $yellow;
+    }
+}
+
+.blackRow{
+    background-color: #000000cb;
+    height: auto;
+    margin-top: 150px;
+    margin-bottom: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .infobox{
+        color: #FFFFFF;
+
+        h6{
+            margin-bottom: 40px;
+        }
+
+        .moreInfo:hover{
+            text-decoration: none;
+            color: $yellow;
+        }
+    
+        .moreInfo{
+            position: relative;
+            padding-top: 20px;
+            text-decoration: none;
+            color: $yellow;
+            font-weight: bold;
+        }
+    
+        .moreInfo:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $yellow;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .moreInfo:hover:before {
+            visibility: visible;
+            width: 100%;
+        }
+    }
+}
+
+
+footer{
+    margin-top: 80px;
+    div{
+        text-align: center;
+    }
+    .copyright{
+        color: white;
+    }
+}
+
+
+@media only screen and (max-width: 970px) {
+    nav{
+        .logo{
+            padding-left: 20px;
+        }
+    }
+
+}
+@media only screen and (max-width: 767px) {
+}
+
+// 654 576
+@media only screen and (max-width: 654px) {
+    nav{
+        a{
+            font-size: 16.4px;
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    nav{
+        .logo{
+            margin: 0 auto;
+            padding: 0px;
+            margin-top: 5px;
+        }
+        a{
+            font-size: 16px;
+        }
+        ul{
+            float: none;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0px;
+        }
+    }
+
+    .blackRow{
+        text-align: center;
+    }
+    
+
+    
+
+}
+
+@media only screen and (max-width: 401px) {
+    nav{
+        ul{
+            padding: 0px;
+
+            li{
+                padding: 10px;
+                margin: 0px;
+                // width: 100%;
+                
+            }
+            a{
+                font-size: 20px;
+            }
+        }
+    }
+
+    .contactForm{
+        margin-top: 90px;
+    }
+}
+@media only screen and (max-width: 401px) {
+    nav{
+        li{
+            width: 33%;
+        }
+    }
+}

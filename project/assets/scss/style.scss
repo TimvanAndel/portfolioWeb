@@ -1,0 +1,268 @@
+// sass --watch scss/style.scss:css/style.min.css --style compressed
+$yellow: #FFE900;
+
+html, body{
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: env(safe-area-inset);
+    background-image: url("../img/background.jpg");
+    /* Full height */
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+
+nav{
+    color: #FFFFFF;
+    height: 100px;
+
+    .logo{
+        display: block;
+        padding-left: -15px;
+        padding-top: 20px;
+        max-height: 90px;
+        cursor: pointer;
+    }
+    ul{
+        text-align: center;
+        float: right;
+    }
+    li{
+        list-style: none;
+        display: inline-block;
+        margin: 20px;
+        margin-top: 30px;
+        font-size: 24px;
+        // text-decoration: underline;
+        // text-underline-offset: 7px;
+    }
+    a{
+        text-decoration: none;
+        color: #FFFFFF;
+        
+    }
+    a:hover{
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+
+    a.left{
+        position: relative;
+    }
+
+    a.left:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #FFFFFF;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    a.left:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
+
+    .active{
+        color: $yellow;
+    }
+    .active:hover{
+        color: $yellow;
+    }
+    a.active:before{
+        background-color: $yellow;
+    }
+}
+
+.sendTrue{
+    background-color: rgba(1, 230, 1, 0.589);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    border: 2px solid #005300;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.sendFailed{
+    background-color: rgba(218, 0, 0, 0.589);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    border: 2px solid #9b1313;
+    border-radius: 5px;
+}
+
+.contactForm{
+    color: #FFFFFF; 
+    margin-top: 20px; 
+    
+    form{
+        color: #FFFFFF;
+        font-weight: bold;
+        margin-top: 20px;
+    
+        .row{
+            margin-top: 15px;
+        }
+        span{
+            color: $yellow;
+        }
+        #inputEmail:invalid{
+            color: #d32424;
+        }
+        
+        #submitForm{
+            background-color: $yellow;
+            float: right;
+            border: none;
+            color: #000000;
+            font-weight: bold;
+        }
+        #submitForm:hover{
+            background-color: #ffd900;
+            transition: 0.1s;
+        }
+        input:focus, textarea:focus{
+            border: 2px solid $yellow !important;
+            box-shadow: 0 0 3px $yellow !important;
+            -moz-box-shadow: 0 0 3px $yellow !important;
+            -webkit-box-shadow: 0 0 3px $yellow !important;
+        }
+        textarea{
+            resize: none;
+        }
+        #requiredFields{
+            float: left;
+        }
+    }
+
+}
+
+.information{
+    color: #FFFFFF;
+    margin-top: 50px;
+}
+.location{
+    color: #FFFFFF;
+    margin-top: 50px;
+
+    iframe{
+        border: 2px solid $yellow;
+        border-radius: 5px;
+    }
+    iframe:focus{
+        border: 2px solid $yellow !important;
+        box-shadow: 0 0 3px $yellow !important;
+        -moz-box-shadow: 0 0 3px $yellow !important;
+        -webkit-box-shadow: 0 0 3px $yellow !important;
+    }
+}
+
+footer{
+    margin-top: 80px;
+    div{
+        text-align: center;
+    }
+    .copyright{
+        color: white;
+    }
+}
+
+
+@media only screen and (max-width: 970px) {
+    nav{
+        .logo{
+            padding-left: 20px;
+        }
+    }
+
+}
+@media only screen and (max-width: 767px) {
+
+    .contactForm, .information, .location, .sendTrue, .sendFailed{
+        padding: 20px;
+    }
+}
+
+// 654 576
+@media only screen and (max-width: 654px) {
+    nav{
+        a{
+            font-size: 16.4px;
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    nav{
+        .logo{
+            margin: 0 auto;
+            padding: 0px;
+            margin-top: 5px;
+        }
+        a{
+            font-size: 16px;
+        }
+        ul{
+            float: none;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0px;
+        }
+    }
+
+    .sendTrue, .sendFailed{
+        margin-top: 100px;
+    }
+
+    .contactForm{
+        margin-top: 50px;
+    }
+    .contactForm, .information, .location{
+        padding: 20px;
+    }
+    
+
+    
+
+}
+
+@media only screen and (max-width: 401px) {
+    nav{
+        margin-bottom: 80px;
+        ul{
+            padding: 0px;
+
+            li{
+                padding: 10px;
+                margin: 0px;
+                width: 33%;
+                // width: 100%;
+                
+            }
+            a{
+                font-size: 20px;
+            }
+        }
+    }
+
+    .sendTrue, .sendFailed{
+        margin-top: 80px;
+    }
+
+    .contactForm{
+        margin-top: 40px;
+    }
+}
